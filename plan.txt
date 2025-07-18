@@ -2,4 +2,19 @@ Navigation bar:
 CP Companion, Home Page, Roadmap, Progress, Resources, History | Search, Register, Login, Logout
 
 
-Progress Tracker
+TODO:
+- Home page
+- Roadmap page request and display
+    - Progress tracker
+    - Direct downloadable resources
+- Progress page
+- Resources page
+    - Direct downloadable resources
+- History page
+- If user is not logged in, you can create roadmaps, but history and progress will depend on the session
+- Dark mode
+- Add these to the active nav item:
+    - class"nav-item active"
+    - aria-current="page"
+
+

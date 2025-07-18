@@ -12,33 +12,86 @@ Output:
 - A roadmap for the user to follow, with downloadable resouces.
 """
 
+
 # Since I'm a lazy coder, here is the command to launch the website:
 # flask run --debug
 
-from flask import Flask, render_template
+
+from flask import Flask, redirect, render_template, request, session
+from flask_session import Session
+from helpers import *
+
 
 app = Flask(__name__)
 
 
+# Session is 31 days by default (remind user to create an account)
+app.config["SESSION_PERMANENT"] = True
+# Store session data in server files
+app.config["SESSION_TYPE"] = "filesystem"
+
+
 @app.route("/")
 def index():
+    """Root route, redirects to the home page."""
+    return render_template("home.html")
+
+
+@app.route("/home")
+def home():
     """Home page, welcomes the user and explains the benefits of the website."""
-    return render_template("layout.html")
+    return render_template("home.html")
 
 
-@app.route("/input", methods=["GET", "POST"])
-def input():
-    """Input page, where the user can enter their topics and ratings."""
-    ...
+@app.route("/roadmap")
+def roadmap():
+    """Roadmap page, where the user can get their personalized roadmap."""
+    return render_template("roadmap.html")
 
 
-@app.route("/output")
-def output():
-    """Output page, where the user can see their personalized roadmap."""
-    return "Hello World"
-    ...
+@app.route("/progress")
+def progress():
+    """Progress page, where the user can track their progress."""
+    return render_template("progress.html")
 
 
+@app.route("/resources")
+def resources():
+    """Resources page, where the user can find the resources library."""
+    return render_template("resources.html")
+
+
+@app.route("/history")
 def history():
-    """History page, where the user can see their past roadmaps."""
-    ...
+    """History page, where the user can see their past roadmaps and their progress."""
+    return render_template("history.html")
+
+
+@app.route("/search")
+def search():
+    """Search page, where the user can search for resources."""
+    return render_template("search.html")
+
+
+@app.route("/profile")
+def profile():
+    """Profile page, where the user can view and edit their profile."""
+    return render_template("profile.html")
+
+
+@app.route("/logout")
+def logout():
+    """Logout page, where the user can log out of their account."""
+    return render_template("logout.html")
+
+
+@app.route("/login")
+def login():
+    """Login page, where the user can log in to their account."""
+    return render_template("login.html")
+
+
+@app.route("/register")
+def register():
+    """Register page, where the user can create a new account."""
+    return render_template("register.html")
