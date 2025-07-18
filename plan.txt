@@ -1,0 +1,5 @@
+Navigation bar:
+CP Companion, Home Page, Roadmap, Progress, Resources, History | Search, Register, Login, Logout
+
+
+Progress Tracker
