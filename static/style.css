@@ -1,19 +1,20 @@
 /* Home Page */
 .home-page {
-    background-color: black;
-    height: 90vh;
-    background-attachment: fixed;
+    background-color: var(--bs-black);
+    height: 100vh;
+    /* background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    text-align: center; */
 }
 
 .home-page-content {
     position: relative;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     text-align: center;
-    color: white;
+    color: var(--bs-light);
 }
 
 .home-page-content h1 {
@@ -29,6 +30,25 @@
 /* Home Page */
 
 
+/* Create Page */
+.create-page {
+    background-color: var(--bs-black);
+    height: 100vh;
+}
+
+.create-page-content {
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: var(--bs-light);
+}
+/* Create Page */
+
+
+/* Layout */
 body {
     background-color: #212529;
+    overflow: hidden;
 }
+/* Layout */

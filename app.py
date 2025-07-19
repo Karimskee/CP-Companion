@@ -43,10 +43,10 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/roadmap")
-def roadmap():
-    """Roadmap page, where the user can get their personalized roadmap."""
-    return render_template("roadmap.html")
+@app.route("/create")
+def create():
+    """Roadmap create page, where the user can enter input knowledge level."""
+    return render_template("create.html")
 
 
 @app.route("/progress")
