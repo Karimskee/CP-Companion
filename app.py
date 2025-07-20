@@ -25,6 +25,60 @@ from helpers import *
 app = Flask(__name__)
 
 
+# Topics
+groups = {
+    "C++ Fundamentals": [
+        "Data Types",
+        "Loops",
+        "Arrays",
+        "Strings",
+        "Functions",
+    ],
+    "Python Fundamentals": [
+        "Data Types",
+        "Loops",
+        "Lists",
+        "Dictionaries",
+        "Functions",
+    ],
+    "Data Structures": [
+        "Linked Lists",
+        "Stacks",
+        "Queues",
+        "Trees",
+        "Graphs",
+    ],
+    "Algorithms": [
+        "Sorting",
+        "Searching",
+        "Dynamic Programming",
+        "Greedy",
+        "Backtracking",
+    ],
+    "Techniques": [
+        "Problem Solving Techniques",
+        "Time Complexity Analysis",
+        "Space Complexity Analysis",
+        "Contest Strategies",
+        "Debugging Techniques",
+    ],
+    "Advanced Topics": [
+        "Bit Manipulation",
+        "Number Theory",
+        "Combinatorics",
+        "Game Theory",
+        "Graph Theory",
+    ],
+    "Miscellaneous": [
+        "Mathematical Foundations",
+        "Coding Standards",
+        "Code Optimization",
+        "Memory Management",
+        "Input/Output Techniques",
+    ],
+}
+
+
 # Session is 31 days by default (remind user to create an account)
 app.config["SESSION_PERMANENT"] = True
 # Store session data in server files
@@ -34,19 +88,19 @@ app.config["SESSION_TYPE"] = "filesystem"
 @app.route("/")
 def index():
     """Root route, redirects to the home page."""
-    return render_template("home.html")
+    return render_template("home.html", page="home")
 
 
 @app.route("/home")
 def home():
     """Home page, welcomes the user and explains the benefits of the website."""
-    return render_template("home.html")
+    return render_template("home.html", page="home")
 
 
 @app.route("/create")
 def create():
     """Roadmap create page, where the user can enter input knowledge level."""
-    return render_template("create.html")
+    return render_template("create.html", groups=groups, page="create")
 
 
 @app.route("/progress")

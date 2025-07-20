@@ -4,7 +4,7 @@
     <div class="create-page">
         <div class="create-page-content">
             <h1>
-                Fill in the information below:
+                Fill in the information below
             </h1>
 
             <form action="/create" method="post">
@@ -13,25 +13,23 @@
                 <input type="number" step="50" placeholder="AtCoder">
                 <input type="number" step="50" placeholder="LeetCode">
 
-                <h3>Topics you know:</h3>
-                <div class="container text-center">
-                    <div class="row row-cols-auto justify-content-md-center">
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="math" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="math">Math</label>
-                        </div>
+                <h3>Topics you know</h3>
+                {% for group, topics in groups.items() %}
+                    <h5>{{ group }}:</h5>
 
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="dynamic_programming" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="dynamic_programming">Dynamic Programming</label>
-                        </div>
-
-                        <div class="col">
-                            <input type="checkbox" class="btn-check" id="segment_tree" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="segment_tree">Segment Tree</label>
+                    <div class="container text-center">
+                        <div class="row row-cols-auto justify-content-md-center">
+                            {% for topic in topics %}
+                                <div class="col">
+                                    <input type="checkbox" class="btn-check" id="{{ topic }}" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="{{ topic }}">{{ topic }}</label>
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>
-                </div>
+                {% endfor %}
+                
+                <input type="submit" class="btn btn-primary mt-3" value="Create Roadmap">
             </form>
         </div>
     </div>

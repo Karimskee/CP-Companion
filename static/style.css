@@ -2,6 +2,7 @@
 .home-page {
     background-color: var(--bs-black);
     height: 100vh;
+    overflow: hidden;
     /* background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -33,13 +34,13 @@
 /* Create Page */
 .create-page {
     background-color: var(--bs-black);
-    height: 100vh;
+    padding-bottom: 5%;
 }
 
 .create-page-content {
     position: relative;
-    top: 40%;
-    transform: translateY(-50%);
+    /* top: 20%; */
+    transform: translateY(5%);
     text-align: center;
     color: var(--bs-light);
 }
@@ -49,6 +50,9 @@
 /* Layout */
 body {
     background-color: #212529;
+}
+
+body.home {
     overflow: hidden;
 }
 /* Layout */
