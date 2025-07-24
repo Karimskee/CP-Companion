@@ -1,2 +1,5 @@
+cs50
 flask
-flask_session
+flask_modals
+flask-session
+werkzeug

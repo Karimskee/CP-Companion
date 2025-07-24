@@ -9,9 +9,9 @@
 
             <form action="/create" method="post">
                 <h3>Highest rating (fill one or more):</p>
-                <input type="number" step="100" placeholder="CodeForces">
-                <input type="number" step="50" placeholder="AtCoder">
-                <input type="number" step="50" placeholder="LeetCode">
+                <input type="number" step="100" name="codeforces" placeholder="CodeForces">
+                <input type="number" step="50" name="atcoder" placeholder="AtCoder">
+                <input type="number" step="50" name="leetcode" placeholder="LeetCode">
 
                 <h3>Topics you know</h3>
                 {% for group, topics in groups.items() %}
@@ -21,7 +21,7 @@
                         <div class="row row-cols-auto justify-content-md-center">
                             {% for topic in topics %}
                                 <div class="col">
-                                    <input type="checkbox" class="btn-check" id="{{ topic }}" autocomplete="off">
+                                    <input type="checkbox" class="btn-check" name="topics" id="{{ topic }}" value="{{ topic }}" autocomplete="off">
                                     <label class="btn btn-outline-primary" for="{{ topic }}">{{ topic }}</label>
                                 </div>
                             {% endfor %}
@@ -31,6 +31,23 @@
                 
                 <input type="submit" class="btn btn-primary mt-3" value="Create Roadmap">
             </form>
+
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="toast align-items-center text-bg-{{ category }} border-0    " role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="d-flex">
+                                    <div class="toast-body">
+                                    {{ message }}
+                                    </div>
+                                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
         </div>
     </div>
 {% endblock %}
