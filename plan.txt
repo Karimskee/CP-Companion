@@ -1,7 +1,3 @@
-Navigation bar:
-CP Companion, Home Page, Roadmap, Progress, Resources, History | Search, Register, Login, Logout
-
-
 TODO:
 - Home page
 - Roadmap page request and display
@@ -18,3 +14,43 @@ TODO:
     - aria-current="page"
 
 
+
+Ideas:
+- Roadmap, 1 roadmap for each user (prompted to create a roadmap if not logged in)
+- Direct downloadable resources
+- Dark & Light mode
+- Resources page, inspiration: https://flask.palletsprojects.com/en/stable/
+- Global standing by score gained from interview-like questions, graded for their first assessment attempt
+- Topics are categorized according to their levels (0, 1, 2, 3+) in the roadmap page
+- Each level has an assessment required to enter that level, only available after completing all prior level topics
+- On topic click, a popup appears asking the user for their next action
+    - Start learning the topic
+    - Start the topic assessment
+        - If passed, mark the topic as completed
+        - Else, prompt again and recommend retaking the topicz
+
+
+Pages:
+- Home page
+- Roadmap page
+- Resources page
+- Standing page
+- About us page
+- Profile page
+- Login page
+- Register page
+
+
+Navigation bar:
+- Logo
+- Home
+- Roadmap
+- Resources
+- Standing
+- About us
+———————————————
+- Search
+- Profile
+- Login
+- Register
+- Logout

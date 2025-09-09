@@ -35,7 +35,7 @@ app.secret_key = "very top secret key mr sirrrr"
 app.config["SESSION_PERMANENT"] = True
 # Store session data in server files
 app.config["SESSION_TYPE"] = "filesystem"
-# Initialize the session
+# Initialize th e session
 Session(app)
 
 # Configure CS50 Library to use SQLite database
@@ -44,18 +44,11 @@ db = SQL("sqlite:///users.db")
 
 # All available topics
 groups = {
-    "C++ Fundamentals": [
+    "Language Fundamentals": [
         "Data Types",
         "Loops",
         "Arrays",
         "Strings",
-        "Functions",
-    ],
-    "Python Fundamentals": [
-        "Data Types",
-        "Loops",
-        "Lists",
-        "Dictionaries",
         "Functions",
     ],
     "Data Structures": [
@@ -177,6 +170,7 @@ def logout():
     """Logout page, where the user can log out of their account."""
     # Logout user, without deleting the session stored data (e.g. topics, rating)
     session.pop("user_id")
+    # TODO: server / local data sync
     return redirect("/")
 
 
@@ -221,6 +215,8 @@ def login():
     # Remember which user has logged in
     session["user_id"] = user_data[0]["id"]
 
+    # TODO: server / local data sync
+
     return redirect("/")
 
 
@@ -263,5 +259,7 @@ def register():
     # Log the user in
     session["user_id"] = db.execute(
         "SELECT id FROM users WHERE email = ?", email)[0]["id"]
+
+    # TODO: server / local data sync
 
     return redirect("/")
